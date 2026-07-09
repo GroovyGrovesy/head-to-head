@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Head to Head — Compare, Decide, Save</title>
+    <meta name="description" content="A new comparison platform shining a light on multiple sectors and product categories. Coming soon from Head to Head.">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Head to Head — Comparison, Done Right">
+    <meta property="og:description" content="A new comparison platform shining a light on multiple sectors and product categories. Coming soon.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://head-to-head.uk">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' font-weight='bold' fill='%23fafafa'>H</text></svg>">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg: #0a0a0a;
+            --fg: #fafafa;
+            --accent: #a3e635;
+            --muted: #71717a;
+            --border: #27272a;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: var(--bg);
+            color: var(--fg);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 0 24px;
+            width: 100%;
+        }
+
+        /* Header */
+        header {
+            padding: 32px 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            color: var(--fg);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        /* Hero */
+        .hero {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(163, 230, 53, 0.06) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 6px 16px;
+            background: rgba(163, 230, 53, 0.1);
+            border: 1px solid rgba(163, 230, 53, 0.2);
+            border-radius: 100px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--accent);
+            margin-bottom: 32px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 800;
+            letter-spacing: -0.04em;
+            line-height: 1.1;
+            margin-bottom: 24px;
+        }
+
+        .hero h1 .highlight {
+            color: var(--accent);
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            line-height: 1.7;
+            color: var(--muted);
+            max-width: 520px;
+            margin: 0 auto 40px;
+        }
+
+        .hero p strong {
+            color: var(--fg);
+            font-weight: 500;
+        }
+
+        /* Features strip */
+        .features {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 48px;
+        }
+
+        .feature {
+            padding: 10px 20px;
+            background: var(--border);
+            border-radius: 8px;
+            font-size: 0.85rem;
+            color: var(--muted);
+            font-weight: 500;
+        }
+
+        /* Sub-links */
+        .links {
+            display: flex;
+            gap: 24px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .links a {
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s;
+            border-bottom: 1px solid transparent;
+        }
+
+        .links a:hover {
+            color: var(--accent);
+            border-bottom-color: var(--accent);
+        }
+
+        /* Footer */
+        footer {
+            padding: 32px 0;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .footer-content p {
+            font-size: 0.85rem;
+            color: var(--muted);
+        }
+
+        .footer-content a {
+            color: var(--muted);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-content a:hover {
+            color: var(--fg);
+        }
+
+        /* Subtle entrance animation */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero > * {
+            animation: fadeUp 0.8s ease-out backwards;
+        }
+
+        .hero > *:nth-child(1) { animation-delay: 0.1s; }
+        .hero > *:nth-child(2) { animation-delay: 0.2s; }
+        .hero > *:nth-child(3) { animation-delay: 0.3s; }
+        .hero > *:nth-child(4) { animation-delay: 0.4s; }
+        .hero > *:nth-child(5) { animation-delay: 0.5s; }
+
+        @media (max-width: 600px) {
+            .features {
+                gap: 8px;
+            }
+            .feature {
+                padding: 8px 14px;
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="/" class="logo">head to head<span>.</span></a>
+        </div>
+    </header>
+
+    <main class="hero container">
+        <span class="badge">Coming Soon</span>
+        <h1>Comparison, <span class="highlight">done right.</span></h1>
+        <p>
+            A new comparison platform <strong>shining a light on multiple sectors and product categories</strong> — helping you make informed decisions with clarity, not noise.
+        </p>
+        <div class="features">
+            <div class="feature">Transparent</div>
+            <div class="feature">Independent</div>
+            <div class="feature">Consumer-First</div>
+        </div>
+        <div class="links">
+            <a href="https://bloodtests.head-to-head.uk">Blood Tests</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2026 Head to Head. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
