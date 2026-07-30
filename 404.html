@@ -127,6 +127,24 @@
             opacity: 0.85;
         }
 
+        .btn-secondary {
+            background: transparent;
+            color: var(--fg);
+            border: 1px solid var(--border);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        .links {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
         /* Footer */
         footer {
             padding: 32px 0;
@@ -180,7 +198,10 @@
         <p>
             The page you're looking for doesn't exist or has been moved. If you were looking for our blood tests comparison site, it's still here.
         </p>
-        <a href="/" class="btn">Back to Home</a>
+        <div class="links">
+            <a href="/" class="btn">Back to Home</a>
+            <a href="https://bloodtests.head-to-head.uk" class="btn btn-secondary">Blood Tests</a>
+        </div>
     </main>
 
     <footer>
