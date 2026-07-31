@@ -23,8 +23,8 @@
 | Setting | Value |
 |---|---|
 | Outgoing Server Name | `smtppro.zoho.eu` |
-| Port | `465` |
-| Requires SSL | Yes |
+| Port | `465` (SSL) or `587` (TLS) |
+| Requires Authentication | Yes |
 | Username | `adam@head-to-head.uk` |
 
 ## Webmail
