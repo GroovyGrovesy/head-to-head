@@ -9,6 +9,15 @@
 | Requires SSL | Yes |
 | Username | `adam@head-to-head.uk` |
 
+## POP
+
+| Setting | Value |
+|---|---|
+| Incoming Server Name | `poppro.zoho.eu` |
+| Port | `995` |
+| Requires SSL | Yes |
+| Username | `adam@head-to-head.uk` |
+
 ## SMTP (for sending)
 
 | Setting | Value |
